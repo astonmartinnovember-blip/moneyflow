@@ -1,12 +1,18 @@
-# MoneyFlow v0.1
+# MoneyFlow — iPhone 11 / iOS 16.6 demo
 
-Mobile-first expense tracker prototype.
+## GitHub Pages
+Барлық файлды репозиторийге жүктеп, GitHub Pages арқылы аш.
 
-## Test flow
-1. Tap "Төлем қосу".
-2. Enter an amount, e.g. 8500.
-3. Choose a category.
-4. The expense appears in the dashboard.
-5. Data is stored locally in the browser.
+## Маңызды
+Бұл нұсқа **нақты банк операцияларын оқымайды**. Браузерге/веб-қосымшаға басқа банк қолданбасының карта немесе QR төлемін жүйелік деңгейде ұстап қалуға iOS рұқсат бермейді.
 
-This version intentionally does not read Apple Pay transactions automatically.
+Демо үшін:
+- 💳 8 500 ₸ төлем — popup ашады
+- 💸 20 000 ₸ перевод — popup ашады
+- категорияны таңдағанда шығын есепке түседі
+- "Хабарлама рұқсаты" батырмасы браузер notification permission сұрайды
+
+iOS 16.4+ Home Screen web apps Web Push қолдайды, сондықтан iOS 16.6-да web push жасауға болады. Бірақ push серверден жіберілуі керек; ол басқа банк қолданбасының транзакциясын өзі анықтамайды.
+
+## Реал өнімге келесі архитектура
+Банк/төлем провайдерінің webhook/API → backend → операцияны анықтау → Web Push → MoneyFlow popup/notification.
