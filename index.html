@@ -1,56 +1,26 @@
 <!doctype html>
-<html lang="kk">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="MoneyFlow">
-<link rel="manifest" href="manifest.json">
-<title>MoneyFlow</title>
-<link rel="stylesheet" href="style.css">
-</head>
-<body>
-<main class="app">
-  <header><div><h1>MONEYFLOW</h1><p>Ақшаңды бақылаудың жеңіл жолы</p></div><button id="reset">↺</button></header>
+<html lang="kk"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="MoneyFlow"><meta name="theme-color" content="#0b0b0d">
+<link rel="manifest" href="manifest.json"><link rel="stylesheet" href="style.css"><title>MoneyFlow</title></head>
+<body><main>
+<header><div class="brand"><div class="logo">₸</div><div><h1>MoneyFlow</h1><p>Жеке қаржы ассистенті</p></div></div><button class="icon" id="settings">⚙️</button></header>
 
-  <section class="balance card">
-    <span>ҚАЛҒАН АҚША</span>
-    <strong id="balance">450 000 ₸</strong>
-    <div class="income">Айлық табыс <b>450 000 ₸</b></div>
-  </section>
+<section class="hero"><span>Қолжетімді баланс</span><strong id="balance">450 000 ₸</strong><div class="progress"><i id="bar"></i></div><small id="budgetText">Айлық бюджет: 500 000 ₸</small></section>
 
-  <section class="card">
-    <div class="row"><div><b>🔔 Операцияны тексеру</b><p class="muted">Демо режим: төлемді имитациялап, бірден сұрақ шығарады.</p></div>
-      <button class="ghost" id="notifyBtn">Хабарлама рұқсаты</button>
-    </div>
-    <div class="actions">
-      <button class="pay" id="cardPay">💳 8 500 ₸ төлем</button>
-      <button class="transfer" id="transfer">💸 20 000 ₸ перевод</button>
-    </div>
-  </section>
+<section class="stats"><div><span>Шығын</span><b id="spent">0 ₸</b></div><div><span>Операциялар</span><b id="count">0</b></div><div><span>Қалғаны</span><b id="remaining">500 000 ₸</b></div></section>
 
-  <section class="card">
-    <div class="row"><b>＋ Төлем қосу</b><span class="muted">Соманы енгізіп, категория таңда</span></div>
-    <form id="addForm">
-      <input id="amount" inputmode="numeric" placeholder="Сома, ₸" required>
-      <select id="category"><option>🍔 Тамақ</option><option>🚕 Такси</option><option>🛍️ Сауда</option><option>🎮 Ойын-сауық</option><option>📚 Оқу</option><option>🏠 Үй</option></select>
-      <button>Қосу</button>
-    </form>
-  </section>
+<section class="card"><div class="sectionHead"><div><h2>Авто-бақылау</h2><p>Төлем келгенде операцияны сұрау</p></div><label class="switch"><input type="checkbox" id="auto" checked><span></span></label></div>
+<div class="notice">🔐 <b>Қауіпсіз режим</b><br><small>Банк карта нөмірі мен PIN MoneyFlow-да сақталмайды.</small></div>
+<div class="buttons"><button class="primary" id="simulate">💳 Төлемді имитациялау</button><button id="push">🔔 Push рұқсаты</button></div></section>
 
-  <section class="card"><div class="row"><b>Осы ай</b><b id="spent">0 ₸ төлем</b></div><div id="list" class="list"><p class="muted">Әзірге шығын жоқ.</p></div></section>
+<section class="card"><div class="sectionHead"><div><h2>Шығындар</h2><p>Соңғы операциялар</p></div><button class="link" id="clear">Тазалау</button></div><div id="list"><div class="empty">Операциялар әзірге жоқ</div></div></section>
+
+<section class="card"><h2>Категориялар</h2><div id="categories" class="categories"></div></section>
 </main>
 
-<div class="overlay" id="overlay">
-  <div class="modal">
-    <div class="emoji">💳</div>
-    <h2>Жаңа операция</h2>
-    <p id="operationText"></p>
-    <p class="question">Бұл ақша қайда жұмсалды?</p>
-    <div class="cats" id="cats"></div>
-    <button class="close" id="cancel">Кейінірек</button>
-  </div>
-</div>
-<script src="app.js"></script>
-</body></html>
+<div class="overlay" id="overlay"><div class="sheet"><div class="grab"></div><div class="sheetTop"><span class="payIcon">₸</span><button class="icon" id="close">✕</button></div>
+<h2>Жаңа төлем анықталды</h2><div class="transaction"><div><span>Төлем</span><b id="txAmount">8 500 ₸</b></div><div><span>Сауда орны</span><b id="txMerchant">Coffee House</b></div><div><span>Уақыт</span><b id="txTime">14:32</b></div></div>
+<h3>Бұл ақша қайда жұмсалды?</h3><div id="catButtons" class="catGrid"></div><button class="later" id="later">Кейінірек</button></div></div>
+<script src="app.js"></script></body></html>
