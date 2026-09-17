@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="kk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b0d12">
+<title>MoneyFlow</title>
+<link rel="manifest" href="manifest.json">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<main class="app">
+  <header>
+    <div>
+      <div class="brand">MONEYFLOW</div>
+      <div class="muted">Ақшаңды бақылаудың жеңіл жолы</div>
+    </div>
+    <button class="icon-btn" id="resetBtn" aria-label="reset">↺</button>
+  </header>
+
+  <section class="hero">
+    <div class="label">ҚАЛҒАН АҚША</div>
+    <div class="balance" id="balance">450 000 ₸</div>
+    <div class="subrow"><span>Айлық табыс</span><b id="income">450 000 ₸</b></div>
+    <div class="progress"><span id="progress"></span></div>
+    <div class="subrow"><span>Жұмсалды</span><b id="spent">0 ₸</b></div>
+  </section>
+
+  <section class="quick">
+    <button class="pay" id="payBtn"><span>＋</span><div><b>Төлем қосу</b><small>Соманы енгізіп, категория таңда</small></div></button>
+  </section>
+
+  <section class="card">
+    <div class="section-title"><b>Осы ай</b><span id="count">0 төлем</span></div>
+    <div id="empty" class="empty">Әзірге шығын жоқ.<br>Бірінші төлемді қосып көр.</div>
+    <div id="list"></div>
+  </section>
+</main>
+
+<div class="sheet hidden" id="sheet">
+  <div class="backdrop" id="closeSheet"></div>
+  <div class="modal">
+    <div class="handle"></div>
+    <div class="modal-head"><div><div class="label">ТӨЛЕМ</div><h2>Қанша жұмсадың?</h2></div><button class="close" id="x">×</button></div>
+    <input id="amount" inputmode="decimal" type="number" min="1" placeholder="8 500">
+    <div class="label category-label">ҚАЙДА ЖҰМСАДЫҢ?</div>
+    <div class="cats" id="cats"></div>
+    <button class="save" id="save" disabled>Категорияны таңда</button>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+<script src="app.js"></script>
+</body>
+</html>
