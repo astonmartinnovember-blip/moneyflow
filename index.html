@@ -26,6 +26,15 @@
     <div class="subrow"><span>Жұмсалды</span><b id="spent">0 ₸</b></div>
   </section>
 
+
+<section class="demo-card">
+  <div class="demo-title">🔔 Операцияны тексеру</div>
+  <div class="demo-text">Төлем немесе перевод жасалғаннан кейін MoneyFlow осындай уведомление көрсетеді.</div>
+  <div class="demo-actions">
+    <button id="demoPay" class="demo-btn">💳 8 500 ₸ төлем</button>
+    <button id="demoTransfer" class="demo-btn">💸 20 000 ₸ перевод</button>
+  </div>
+</section>
   <section class="quick">
     <button class="pay" id="payBtn"><span>＋</span><div><b>Төлем қосу</b><small>Соманы енгізіп, категория таңда</small></div></button>
   </section>
@@ -51,5 +60,19 @@
 
 <div class="toast" id="toast"></div>
 <script src="app.js"></script>
+
+<div class="notice hidden" id="notice">
+  <div class="notice-box">
+    <button class="notice-close" id="noticeClose">×</button>
+    <div class="notice-icon" id="noticeIcon">💸</div>
+    <div class="notice-body">
+      <div class="notice-brand">MONEYFLOW</div>
+      <div class="notice-title" id="noticeTitle">Перевод жасадың</div>
+      <div class="notice-amount" id="noticeAmount">20 000 ₸</div>
+      <div class="notice-question" id="noticeQuestion">Қайда жібердің?</div>
+      <div class="notice-cats" id="noticeCats"></div>
+    </div>
+  </div>
+</div>
 </body>
 </html>
